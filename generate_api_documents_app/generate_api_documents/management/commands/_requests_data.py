@@ -92,7 +92,7 @@ project1.owner_id = USER_ID
 project1.save()
 transfer_service.start_project_transfer(project1, user, "test")
 
-project2 = Project.objects.get(id=2)
+project2 = Project.objects.get(id=3)
 project1.owner_id = USER_ID
 project1.save()
 transfer_service.start_project_transfer(project2, user, "test")
@@ -174,8 +174,8 @@ reqs = OrderedDict([
         "body": {
             "project_id": 1,
             "bulk_memberships": [
-                {"role_id": 3, "email": "test@test.com"},
-                {"role_id": 4, "email": "john@doe.com"}
+                {"role_id": 3, "username": "test@test.com"},
+                {"role_id": 4, "username": "john@doe.com"}
             ]
         }
     }),
@@ -189,7 +189,7 @@ reqs = OrderedDict([
         "body": {
             "project": 1,
             "role": 3,
-            "email": "test-user@test.com"
+            "username": "test-user@test.com"
         }
     }),
     ("memberships-get", {
@@ -1363,7 +1363,7 @@ reqs = OrderedDict([
     }),
     ("projects-transfer-accept", {
         "method": "POST",
-        "url": "/api/v1/projects/2/transfer_accept",
+        "url": "/api/v1/projects/{}/transfer_accept".format(project2.id),
         "body": {
             "token": project2.transfer_token,
             "reason": "testing"
@@ -2643,7 +2643,7 @@ reqs = OrderedDict([
     }),
     ("projects-leave", {
         "method": "POST",
-        "url": "/api/v1/projects/3/leave",
+        "url": "/api/v1/projects/2/leave",
     }),
     ("projects-delete", {
         "method": "DELETE",
