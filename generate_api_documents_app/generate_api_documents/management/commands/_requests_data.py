@@ -1377,6 +1377,14 @@ reqs = OrderedDict([
             "reason": "testing"
         }
     }),
+    ("contact-create", {
+        "method": "POST",
+        "url": "/api/v1/contact",
+        "body": {
+            "project": project2.id,
+            "comment": "Comment to admins"
+        }
+    }),
     ("projects-list", {
         "method": "GET",
         "url": "/api/v1/projects",

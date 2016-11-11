@@ -133,6 +133,8 @@ include::locales/endpoints.adoc[]
 === Stats
 include::stats/endpoints.adoc[]
 
+=== Contact
+include::contact/endpoints.adoc[]
 
 [[auth]]
 == Auth
@@ -298,6 +300,10 @@ include::locales/summary.adoc[]
 == Stats
 include::stats/summary.adoc[]
 
+
+[[contact]]
+== Contact
+include::contact/summary.adoc[]
 
 == Objects Summary
 
@@ -639,6 +645,9 @@ include::generated/stats-discover-output.adoc[]
 === System stats
 include::generated/stats-system-output.adoc[]
 
+[[object-contact]]
+=== Contact
+include::generated/contact-create-output.adoc[]
 
 == Contrib plugins
 
