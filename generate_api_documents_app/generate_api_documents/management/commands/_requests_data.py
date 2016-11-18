@@ -1377,6 +1377,17 @@ reqs = OrderedDict([
             "reason": "testing"
         }
     }),
+    ("projects-duplicate", {
+        "method": "POST",
+        "url": "/api/v1/projects/{}/duplicate".format(project2.id),
+        "body": {
+            "is_private": True,
+            "description": "c description",
+            "name": "Dup name",
+            "users": [{"id": 8}]
+
+        }
+    }),
     ("contact-create", {
         "method": "POST",
         "url": "/api/v1/contact",
